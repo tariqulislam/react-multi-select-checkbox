@@ -3,7 +3,7 @@ React is most popular front end development framework. For our application devel
 First i have use create react app for react js application boilerplate to start my example projects
 > npm install -g create-react-app (npm command)
 After complete the installation, i have create the project by provide the command
-```> create-react-app react-multi-select-checkbox```
+``` create-react-app react-multi-select-checkbox```
 When finish setup project, then i have to remove generated default htm code code from App.js create the state for checkbox group component
 
 
@@ -29,22 +29,26 @@ Output design Check All Examplethen i have to add the action handler for Check/
 
 Full code for App.js 
 
-```filehandleAllChecked = (event) => {
+```
+filehandleAllChecked = (event) => {
    let fruites = this.state.fruites
    fruites.forEach(fruite => fruite.isChecked = event.target.checked)
    this.setState({fruites: fruites})
-}```
+}
+```
 
 this function is arrow function, for arrow function react by default bind this to component , no need to bind this at constructor . for first list let fruites = this.state.fruites , we use this statement to get the fruites state to local variable and then use forEach() function to iterate and manipulate the isChechecked properties true or false of fruite element. then set or change the state by this.setState({}) function. this function will checked or unchecked all the checkbox from checkbox group.
 
-```handleCheckChieldElement = (event) => {
+```
+handleCheckChieldElement = (event) => {
    let fruites = this.state.fruites
    fruites.forEach(fruite => {
      if (fruite.value === event.target.value)
        fruite.isChecked =  event.target.checked
      })
    this.setState({fruites: fruites})
-}```
+}
+```
 
 this function is used for check the individual checkbox from group of checkbox. this function is like previous one, execption is, i have check the checked element value is matched with element value of state. if matched it will change the state of that individual CheckBox . then i have to pass the element handler to chield component (`CheckBox.js`) by add handleCheckChieldElement function to props arguments by:
 
