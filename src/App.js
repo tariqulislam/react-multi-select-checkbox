@@ -39,8 +39,8 @@ class App extends Component {
       <input type="checkbox" onClick={this.handleAllChecked}  value="checkedall" /> Check / Uncheck All
         <ul>
         {
-          this.state.fruites.map((fruite) => {
-            return (<CheckBox handleCheckChieldElement={this.handleCheckChieldElement}  {...fruite} />)
+          this.state.fruites.map((fruite, index) => {
+            return (<CheckBox key={index} handleCheckChieldElement={this.handleCheckChieldElement}  {...fruite} />)
           })
         }
         </ul>
